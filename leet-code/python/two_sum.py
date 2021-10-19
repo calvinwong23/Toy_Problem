@@ -30,10 +30,6 @@ target_input = {
 }
 
 s = Solution()
-#print(s.twoSum(list_input['list_1'], target_input['target_1']))
-#print(s.twoSum(list_input['list_2'], target_input['target_2']))
-#print(s.twoSum(list_input['list_3'], target_input['target_3']))
-
 print(s.twoSum(list_input['list_1'], target_input['target_1']))
 print(s.twoSum(list_input['list_2'], target_input['target_2']))
 print(s.twoSum(list_input['list_3'], target_input['target_3']))
