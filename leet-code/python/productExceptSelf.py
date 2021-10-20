@@ -5,7 +5,19 @@ class Solution(object):
         :rtype: List[int]
         """
 
+        output = []
         
+
+        for i in range(len(nums)):
+            skip = nums[i]
+            for j in range(len(nums)):
+                if nums[j] == skip:
+                    continue
+                else:
+                    total = total * nums[j]
+            output.append(total)
+
+        return output
 
 nums = {
     "list_1": [1,2,3,4],
