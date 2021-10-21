@@ -47,11 +47,40 @@ class Solution(object):
 
         return output
 
+    def productExceptSelfInSpace(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        # Variables: output, length of Nums list
+        output = []
+        length = len(nums)
+
+        # set starting point of output to 1
+        output.append(1)
+
+        #product left
+        for i in range(1, length):
+            temp = nums[i-1]*output[i-1]
+            output.append(temp)
+
+        # Product Left and right
+        r = 1
+        for n in range(length-1, -1, -1):
+            temp = output[n] * r
+            output[n] = temp
+            r = r * nums[n]
+
+
+
+        return output
+
+
 nums = {
     "list_1": [1,2,3,4],
     "list_2": [-1,1,0,-3,3]
 }
 
 s = Solution()
-print(s.productExceptSelf(nums['list_1'])) #[24,12,8,6]
+print(s.productExceptSelfInSpace(nums['list_1'])) #[24,12,8,6]
 #print(s.productExceptSelf(nums['list_2'])) #[0,0,9,0,0]
