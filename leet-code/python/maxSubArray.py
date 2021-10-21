@@ -1,5 +1,29 @@
 class Solution(object):
-    def maxSubArray(self, nums):
+    def maxSubArray_1(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        maxSub = nums[0]
+        currSum = nums[0]
+
+        fast = 1
+
+        while fast < len(nums):
+
+            if currSum < 0:
+                currSum = 0
+
+            currSum += nums[fast]
+            
+            maxSub = max(currSum, maxSub)
+
+            fast += 1
+
+        return maxSub
+
+    def maxSubArray_2(self, nums):
         """
         :type nums: List[int]
         :rtype: int
@@ -9,7 +33,6 @@ class Solution(object):
         curSum = 0
         
         for n in nums:
-            #print(n)
             if curSum < 0:
                 curSum = 0
             curSum += n
@@ -18,8 +41,6 @@ class Solution(object):
         return maxSub
 
 
-        
-
 nums = {
     "list_1": [-2,1,-3,4,-1,2,1,-5,4],
     "list_2": [-2,1],
@@ -27,6 +48,6 @@ nums = {
 }
 
 s = Solution()
-print(s.maxSubArray(nums['list_1'])) #6
-print(s.maxSubArray(nums['list_2'])) #1
-print(s.maxSubArray(nums['list_3'])) #23
+print(s.maxSubArray_2(nums['list_1'])) #6
+#print(s.maxSubArray_1(nums['list_2'])) #1
+#print(s.maxSubArray_1(nums['list_3'])) #23
