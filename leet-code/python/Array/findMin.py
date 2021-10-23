@@ -4,6 +4,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        lo, hi = 0, len(nums) - 1
+        while lo <= hi:
+            mid = (lo+hi)//2
+            if nums[mid] > nums[hi]: # go to right
+                lo = mid + 1
+            elif nums[mid] < nums[lo]: # go to left    
+                hi = mid
+            else: # [lo, hi] sorted
+                return nums[lo]
 
 
 nums = {
