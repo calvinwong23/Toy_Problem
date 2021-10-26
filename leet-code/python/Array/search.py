@@ -6,6 +6,11 @@ class Solution(object):
         :rtype: int
         """
         
+        for n in nums:
+            if n == target:
+                return nums.index(n)
+
+        return -1
 
 nums = {
     "list_1": [4,5,6,7,0,1,2],
