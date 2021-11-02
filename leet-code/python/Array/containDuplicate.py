@@ -18,6 +18,23 @@ class Solution(object):
             start += 1
 
         return False
+        
+    def containsDuplicate_1(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        
+        if len(nums) <= 1:
+            return False
+        
+        nums.sort()
+
+        for i in range(0, len(nums)):
+            if nums[i-1] == nums[i]:
+                return True
+            
+        return False
 
 list_input = {
     "list_1": [1,2,3,1],
