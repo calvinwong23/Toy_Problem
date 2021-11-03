@@ -4,6 +4,13 @@ class Solution(object):
         :type n: int
         :rtype: List[int]
         """
+        iniArr = [0]
+        if n > 0:
+            amountToAdd = 1
+            while len(iniArr) < n + 1:
+                iniArr.extend([x+1 for x in iniArr])
+        
+        return iniArr[0:n+1]
 
 nums = {
     "n_1": 2,
