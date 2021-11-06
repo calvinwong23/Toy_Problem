@@ -4,6 +4,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        if(len(nums)==0):
+            return 0
+        s=0
+        s1=0
+        for i in range(len(nums)+1):
+            s+=i
+        for i in nums:
+            s1+=i
+        return s-s1
 
 nums = {
     "n_1": [3,0,1],
