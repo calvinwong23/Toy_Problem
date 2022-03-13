@@ -21,7 +21,21 @@ class Solution(object):
 
         return output
 
+    def slidingWindow(self, s):
+        end = len(s)
+        res = 0
+        mp = {}
+        l = 0
+        for j in range(end):
+            if s[j] in mp:
+                l = max(mp[s[j]], l)
+        
+            res = max(res, l - j + 1)
+            mp[s[j]] = j + 1
+
+        return res
 a = "au"
 
 s = Solution()
-print(s.lengthOfLongestSubstring(a))
+#print(s.lengthOfLongestSubstring(a))
+print(s.slidingWindow(a))
