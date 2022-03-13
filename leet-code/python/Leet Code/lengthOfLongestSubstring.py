@@ -29,12 +29,14 @@ class Solution(object):
         for j in range(end):
             if s[j] in mp:
                 l = max(mp[s[j]], l)
-        
-            res = max(res, l - j + 1)
+                
+            res = max(res, j - l + 1)
+            print(res, " = ",j, " - ", l, " + 1")
             mp[s[j]] = j + 1
+            print("dict: ", mp)
 
         return res
-a = "au"
+a = "abcabcbb"
 
 s = Solution()
 #print(s.lengthOfLongestSubstring(a))
