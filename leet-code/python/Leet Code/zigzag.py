@@ -24,9 +24,26 @@ class Solution(object):
                 
         return res
 
+    def convert_2(self, s, numRows):
+        if numRows == 1:
+            return s
+            
+        curRow, step = 0, 1
+        rows = [''] * numRows
+        
+        for ch in s:
+            print(rows)
+            rows[curRow] += ch
+        if curRow == numRows - 1:
+            step = -1
+        elif curRow == 0:
+            step = 1
+        curRow += step
+        return ''.join(rows)
+
 a = 'PAYPALISHIRING'
 s = Solution()
-print(s.convert(a, 3))
+print(s.convert_2(a, 3))
 
 
 #res = [[] for _ in range(3)]
