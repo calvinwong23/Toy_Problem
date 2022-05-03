@@ -13,8 +13,10 @@ class Solution(object):
             temp = ""
             digit = num % 10
         
-            if   digit == 4 : temp = table[i] + table[i+1]
-            elif digit == 9 : temp = table[i] + table[i+2]
+            if   digit == 4 : 
+                temp = table[i] + table[i+1]
+            elif digit == 9 : 
+                temp = table[i] + table[i+2]
             else :
                 if digit > 4 :
                     temp = table[i+1] 
